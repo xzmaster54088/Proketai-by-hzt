@@ -7,10 +7,10 @@ set -e
 
 echo "🚀 Starting PocketDev build process..."
 
-# Check if gradlew exists
+# Check if gradlew exists, generate if missing
 if [ ! -f "./gradlew" ]; then
-    echo "❌ gradlew not found. Please run this script from the project root directory."
-    exit 1
+    echo "⚠️ gradlew not found. Generating Gradle wrapper..."
+    gradle wrapper
 fi
 
 # Make gradlew executable
