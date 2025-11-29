@@ -23,8 +23,8 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
-    - name: Make gradlew executable
-      run: chmod +x ./gradlew
+    - name: Generate Gradle Wrapper
+      run: gradle wrapper
 
     - name: Build with Gradle
       run: ./gradlew assembleDebug
@@ -52,8 +52,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Make gradlew executable
-      run: chmod +x ./gradlew
+    - name: Generate Gradle Wrapper
+      run: gradle wrapper
 
     - name: Run lint
       run: ./gradlew lintDebug
